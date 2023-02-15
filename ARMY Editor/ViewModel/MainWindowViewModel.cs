@@ -117,7 +117,7 @@ namespace ARMY_Editor.ViewModel
 
             this.CreateNewTrooper = new RelayCommand(() =>
             {
-                
+                logic.CreateNewTrooper();
             },
             () =>
             {
