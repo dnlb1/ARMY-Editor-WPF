@@ -12,7 +12,7 @@
         <VM:MainWindowViewModel></VM:MainWindowViewModel>
     </Window.DataContext>
     <Window.Resources>
-        <Color:ProgressBarColor x:Key="ColorSide"></Color:ProgressBarColor>
+        <Color:BackgroundStackPanel x:Key="ColorSide"></Color:BackgroundStackPanel>
     </Window.Resources>
     
     <Grid>
@@ -26,7 +26,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">
-                        <StackPanel>
+                        <StackPanel Background="{Binding Side, Converter={StaticResource ColorSide}}">
                             <Label Content="{Binding Name}" ContentStringFormat="Name: {0}"></Label>
                             <Grid>
                                 <Grid.ColumnDefinitions>

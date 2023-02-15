@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace ARMY_Editor.ServiceHelper
 {
-    class ProgressBarColor : IValueConverter
+    class BackgroundStackPanel : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -18,9 +18,9 @@ namespace ARMY_Editor.ServiceHelper
             switch (s)
             {
                 case Side.Good:
-                    return Brushes.Green;
+                    return Brushes.LightGreen;
                 case Side.Evil:
-                    return Brushes.Red;
+                    return Brushes.LightCoral;
                 case Side.Neutral:
                     return Brushes.Wheat;
                 default:
