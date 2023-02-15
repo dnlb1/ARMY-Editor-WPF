@@ -50,9 +50,9 @@
         </ListBox>
 
         <StackPanel Grid.Column="1">
-            <Button Margin="10" Padding="15" Content="Add new Trooper"></Button>
-            <Button Margin="10" Padding="15" Content="Send To War"></Button>
-            <Button Margin="10" Padding="15" Content="Call Back From War"></Button>
+            <Button Margin="10" Padding="15" Content="Add new Trooper" Command="{Binding CreateNewTrooper}"></Button>
+            <Button Margin="10" Padding="15" Content="Send To War" Command="{Binding AddToWar}"></Button>
+            <Button Margin="10" Padding="15" Content="Call Back From War" Command="{Binding CallBackFromWar}"></Button>
             <Label Content="avg"></Label>
             <ProgressBar></ProgressBar>
             <Label Content="avg"></Label>
