@@ -16,6 +16,19 @@ namespace ARMY_Editor.Logic
             this.War = War;
         }
 
+        public double AvgSpeed
+        {
+            get
+            {
+                return War.Average(t => t.Speed);
+            }
+        }
+
+        public double AvgPower()
+        {
+            return War.Average(t => t.Power);
+        }
+
         public void AddToWar(Trooper T)
         {
             War.Add(T.GetCopy());
