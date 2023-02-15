@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARMY_Editor"
         mc:Ignorable="d"
+        Closing="Window_Closing" 
         Title="TrooperCreator" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="mygrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -26,6 +27,6 @@
         <TextBox Grid.Row="5" Text="{Binding Actual.Power,  UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
         <Label Grid.Row="6" Content="Side (Neutral, Evil, Good)" Background="LightBlue" VerticalContentAlignment="Center"></Label>
         <TextBox  Grid.Row="7" Text="{Binding Actual.Side,  UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
-        <Button Grid.Row="8" Content="Create!" FontSize="20"></Button>
+        <Button Grid.Row="8" Content="Create!" FontSize="20" Click="Button_Click"></Button>
     </Grid>
 </Window>

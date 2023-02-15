@@ -12,8 +12,15 @@ namespace ARMY_Editor.Logic
         public Trooper Create()
         {
             Trooper x = new Trooper();
-            new TrooperCreator(x).ShowDialog();
-            return x;
+            TrooperCreator Tc = new TrooperCreator(x);
+            if (Tc.ShowDialog() == true)
+            {
+                return x;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

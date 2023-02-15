@@ -21,12 +21,34 @@ namespace ARMY_Editor
     /// </summary>
     public partial class TrooperCreator : Window
     {
+        bool Saved;
         public TrooperCreator(Trooper x)
         {
             InitializeComponent();
             var vm = new TrooperCreatorViewModel();
             vm.Setup(x);
             this.DataContext = vm;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in mygrid.Children)
+            {
+                if (item is TextBox t)
+                {
+                    t.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+                }
+            }
+            Saved = true;
+            this.DialogResult = true;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!Saved)
+            {
+                this.DialogResult = false;
+            }
         }
     }
 }

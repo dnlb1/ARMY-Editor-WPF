@@ -35,11 +35,11 @@
                                     <ColumnDefinition Width="1*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
-                                    <Label Content="Speed:"></Label>
+                                    <Label Content="{Binding Speed}" ContentStringFormat="Speed: {0}"></Label>
                                     <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Speed}" Foreground="{Binding Speed, Converter={StaticResource ColorProgress}}"></ProgressBar>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
-                                    <Label Content="Power:"></Label>
+                                    <Label Content="{Binding Power}" ContentStringFormat="Power: {0}"></Label>
                                     <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Power}" Foreground="{Binding Power, Converter={StaticResource ColorProgress}}"></ProgressBar>
                                 </StackPanel>
                             </Grid>

@@ -67,7 +67,12 @@ namespace ARMY_Editor.Logic
 
         public void CreateNewTrooper()
         {
-            Tp.Create();
+            Trooper created = Tp.Create();
+            if (created != null)
+            {
+                War.Add(created);
+                msg.Send("TrooperAdded", "AvgToken");
+            }
         }
     }
 }
