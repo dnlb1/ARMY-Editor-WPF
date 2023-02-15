@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,14 @@ namespace ARMY_Editor.Model
         Evil,
         Neutral
     }
-    class Trooper
+    class Trooper : ObservableObject
     {
         private string name;
 
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { SetProperty(ref name , value); }
         }
 
         private int power;
@@ -27,7 +28,7 @@ namespace ARMY_Editor.Model
         public int Power
         {
             get { return power; }
-            set { power = value; }
+            set { SetProperty(ref power, value); }
         }
 
         private double speed;
@@ -35,7 +36,7 @@ namespace ARMY_Editor.Model
         public double Speed
         {
             get { return speed; }
-            set { speed = value; }
+            set {SetProperty(ref speed , value); }
         }
 
         private Side side;
@@ -43,9 +44,20 @@ namespace ARMY_Editor.Model
         public Side Side
         {
             get { return side; }
-            set { side = value; }
+            set { SetProperty(ref side, value); }
         }
 
+        //DeepCopy - GOF 
 
+        public Trooper GetCopy()
+        {
+            return new Trooper()
+            {
+                Name = this.name,
+                Side = this.side,
+                Speed = this.speed,
+                Power = this.power
+            };
+        }
     }
 }
