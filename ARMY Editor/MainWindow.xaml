@@ -15,7 +15,15 @@
 
         <ListBox Grid.Column="0" ></ListBox>
 
-        <StackPanel></StackPanel>
+        <StackPanel Grid.Column="1">
+            <Button Margin="10" Padding="15" Content="Add new Trooper"></Button>
+            <Button Margin="10" Padding="15" Content="Send To War"></Button>
+            <Button Margin="10" Padding="15" Content="Call Back From War"></Button>
+            <Label Content="avg"></Label>
+            <ProgressBar></ProgressBar>
+            <Label Content="avg"></Label>
+            <ProgressBar></ProgressBar>
+        </StackPanel>
         
         <ListBox Grid.Column="2" ></ListBox>
         
