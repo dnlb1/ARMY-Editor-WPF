@@ -18,7 +18,7 @@ namespace ARMY_Editor.Logic
 
         public void AddToWar(Trooper T)
         {
-            War.Add(T);
+            War.Add(T.GetCopy());
         }
 
         public void RemoveFromWar(Trooper T)

@@ -23,7 +23,7 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" ItemsSource="{Binding Camp}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelecterCamp}">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Camp}" HorizontalContentAlignment="Stretch"  SelectedItem="{Binding SelecterCamp}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">

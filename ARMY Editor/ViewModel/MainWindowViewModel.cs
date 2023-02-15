@@ -77,7 +77,7 @@ namespace ARMY_Editor.ViewModel
 
             this.AddToWar = new RelayCommand(() =>
             {
-                
+                logic.AddToWar(SelecterCamp);
             },
             () =>
             {
@@ -86,7 +86,7 @@ namespace ARMY_Editor.ViewModel
 
             this.CallBackFromWar = new RelayCommand(() =>
             {
-
+                logic.RemoveFromWar(SelectedWar);
             },
             () =>
             {
@@ -94,9 +94,9 @@ namespace ARMY_Editor.ViewModel
             });
 
 
-            this.AddToWar = new RelayCommand(() =>
+            this.CreateNewTrooper = new RelayCommand(() =>
             {
-
+                
             },
             () =>
             {
