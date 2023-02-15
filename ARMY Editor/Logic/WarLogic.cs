@@ -24,9 +24,12 @@ namespace ARMY_Editor.Logic
             }
         }
 
-        public double AvgPower()
+        public double AvgPower
         {
-            return War.Average(t => t.Power);
+            get
+            {
+                return War.Average(t => t.Power);
+            }
         }
 
         public void AddToWar(Trooper T)

@@ -44,6 +44,42 @@ namespace ARMY_Editor.ViewModel
             }
         }
 
+        private double avgspeed;
+
+        public double AvgSpeed
+        {
+            get
+            {
+                if (logic != null)
+                {
+                    return logic.AvgSpeed;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { SetProperty(ref avgspeed, value); }
+        }
+        private double avgpower;
+
+        public double AvgPower
+        {
+            get
+            {
+                if (logic != null)
+                {
+                    return logic.AvgPower;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { SetProperty(ref avgpower, value); }
+        }
+
+
 
         IWarLogic logic;
 
