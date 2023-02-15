@@ -73,6 +73,8 @@ namespace ARMY_Editor.ViewModel
             this.War = new ObservableCollection<Trooper>();
             this.War.Add(new Trooper() { Side = Side.Evil, Speed = 2, Name = "Bela", Power = 4 });
 
+            logic.SetupLogic(War);
+
             this.AddToWar = new RelayCommand(() =>
             {
 
