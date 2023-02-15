@@ -1,5 +1,7 @@
-﻿using ARMY_Editor.Model;
+﻿using ARMY_Editor.Logic;
+using ARMY_Editor.Model;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,8 +42,9 @@ namespace ARMY_Editor.ViewModel
         }
 
 
+        IWarLogic logic;
 
-        public bool IsInDesigner
+        public static bool IsInDesigner
         {
             get
             {
@@ -54,8 +57,14 @@ namespace ARMY_Editor.ViewModel
         public ICommand CallBackFromWar { get; set; }
         public ICommand CreateNewTrooper { get; set; }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(): this(IsInDesigner ? null : Ioc.Default.GetService<IWarLogic>())
         {
+        }
+
+
+        public MainWindowViewModel(IWarLogic logic)
+        {
+            this.logic = logic;
             this.Camp = new ObservableCollection<Trooper>();
             this.Camp.Add(new Trooper() { Side = Side.Neutral, Speed = 2, Name = "Bela", Power = 4});
             this.War = new ObservableCollection<Trooper>();
