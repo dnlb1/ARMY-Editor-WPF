@@ -15,5 +15,20 @@ namespace ARMY_Editor.Logic
         {
             this.War = War;
         }
+
+        public void AddToWar(Trooper T)
+        {
+            War.Add(T);
+        }
+
+        public void RemoveFromWar(Trooper T)
+        {
+            War.Remove(T);
+        }
+
+        public void CreateNewTrooper()
+        {
+
+        }
     }
 }

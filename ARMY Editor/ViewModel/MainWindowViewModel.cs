@@ -77,7 +77,7 @@ namespace ARMY_Editor.ViewModel
 
             this.AddToWar = new RelayCommand(() =>
             {
-
+                
             },
             () =>
             {
