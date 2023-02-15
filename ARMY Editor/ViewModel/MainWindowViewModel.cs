@@ -2,6 +2,7 @@
 using ARMY_Editor.Model;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,7 +25,8 @@ namespace ARMY_Editor.ViewModel
             get { return selectedcamp; }
             set 
             {
-                SetProperty(ref selectedcamp , value); 
+                SetProperty(ref selectedcamp , value);
+                (AddToWar as RelayCommand).NotifyCanExecuteChanged();
             }
         }
 
@@ -37,7 +39,8 @@ namespace ARMY_Editor.ViewModel
             get { return selectedwar; }
             set 
             { 
-                SetProperty(ref selectedwar , value); 
+                SetProperty(ref selectedwar , value);
+                (CallBackFromWar as RelayCommand).NotifyCanExecuteChanged();
             }
         }
 
@@ -69,6 +72,34 @@ namespace ARMY_Editor.ViewModel
             this.Camp.Add(new Trooper() { Side = Side.Neutral, Speed = 2, Name = "Bela", Power = 4});
             this.War = new ObservableCollection<Trooper>();
             this.War.Add(new Trooper() { Side = Side.Evil, Speed = 2, Name = "Bela", Power = 4 });
+
+            this.AddToWar = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return SelecterCamp != null;
+            });
+
+            this.CallBackFromWar = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return SelectedWar != null;
+            });
+
+
+            this.AddToWar = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return true;
+            });
 
 
 
