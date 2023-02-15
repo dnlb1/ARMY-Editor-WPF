@@ -53,10 +53,10 @@
             <Button Margin="10" Padding="15" Content="Add new Trooper" Command="{Binding CreateNewTrooper}"></Button>
             <Button Margin="10" Padding="15" Content="Send To War" Command="{Binding AddToWar}"></Button>
             <Button Margin="10" Padding="15" Content="Call Back From War" Command="{Binding CallBackFromWar}"></Button>
-            <Label Content="avg"></Label>
-            <ProgressBar></ProgressBar>
-            <Label Content="avg"></Label>
-            <ProgressBar></ProgressBar>
+            <Label Content="{Binding AvgSpeed}" ContentStringFormat="Avg. Speed: {0}"></Label>
+            <ProgressBar Maximum="10" Height="10" Margin="10" Value="{Binding AvgSpeed}" Foreground="{Binding AvgSpeed, Converter={StaticResource ColorProgress}}"></ProgressBar>
+            <Label Content="{Binding AvgPower}" ContentStringFormat="Avg. Power: {0}"></Label>
+            <ProgressBar Maximum="10" Height="10" Margin="10" Value="{Binding AvgPower}" Foreground="{Binding AvgPower, Converter={StaticResource ColorProgress}}"></ProgressBar>
         </StackPanel>
 
         <ListBox Grid.Column="2" ItemsSource="{Binding War}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedWar}">

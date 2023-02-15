@@ -45,36 +45,21 @@ namespace ARMY_Editor.ViewModel
         }
 
         private double avgspeed;
-
         public double AvgSpeed
         {
             get
             {
-                if (logic != null)
-                {
-                    return logic.AvgSpeed;
-                }
-                else
-                {
-                    return 0;
-                }
+                return logic.AvgSpeed;
             }
             set { SetProperty(ref avgspeed, value); }
         }
+        
         private double avgpower;
-
         public double AvgPower
         {
             get
             {
-                if (logic != null)
-                {
-                    return logic.AvgPower;
-                }
-                else
-                {
-                    return 0;
-                }
+                return logic.AvgPower;
             }
             set { SetProperty(ref avgpower, value); }
         }
@@ -139,7 +124,11 @@ namespace ARMY_Editor.ViewModel
                 return true;
             });
 
-
+            Messenger.Register<MainWindowViewModel, string, string>(this, "AvgToken", (recipient, msg) =>
+            {
+                OnPropertyChanged("AvgSpeed");
+                OnPropertyChanged("AvgPower");
+            });
 
         }
     }

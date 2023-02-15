@@ -1,4 +1,5 @@
 ﻿using ARMY_Editor.Model;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,11 @@ namespace ARMY_Editor.Logic
     class WarLogic : IWarLogic
     {
         IList<Trooper> War { get; set; }
-
+        IMessenger msg;
+        public WarLogic(IMessenger msg)
+        {
+            this.msg = msg;
+        }
         public void SetupLogic(IList<Trooper> War)
         {
             this.War = War;
@@ -20,7 +25,14 @@ namespace ARMY_Editor.Logic
         {
             get
             {
-                return War.Average(t => t.Speed);
+                if (War.Count > 0 )
+                {
+                    return War.Average(t => t.Speed);
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
@@ -28,18 +40,27 @@ namespace ARMY_Editor.Logic
         {
             get
             {
-                return War.Average(t => t.Power);
+                if (War.Count > 0)
+                {
+                    return War.Average(t => t.Power);
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
         public void AddToWar(Trooper T)
         {
             War.Add(T.GetCopy());
+            msg.Send("TrooperAdded", "AvgToken");
         }
 
         public void RemoveFromWar(Trooper T)
         {
             War.Remove(T);
+            msg.Send("TrooperDeleted", "AvgToken");
         }
 
         public void CreateNewTrooper()
