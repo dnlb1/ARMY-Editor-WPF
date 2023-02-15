@@ -19,9 +19,10 @@ namespace ARMY_Editor
     {
         public App()
         {
-            Ioc.Default.ConfigureServices(new ServiceCollection()
-                .AddSingleton<IWarLogic, WarLogic>()
-                .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)  
+            Ioc.Default.ConfigureServices(new ServiceCollection().
+                AddSingleton<IWarLogic, WarLogic>().
+                AddSingleton<ITrooperCreatorOpen, ITrooperCreatorOpen>()
+                .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
                 .BuildServiceProvider());
         }
     }
