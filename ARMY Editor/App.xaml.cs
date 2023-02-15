@@ -21,7 +21,7 @@ namespace ARMY_Editor
         {
             Ioc.Default.ConfigureServices(new ServiceCollection().
                 AddSingleton<IWarLogic, WarLogic>().
-                AddSingleton<ITrooperCreatorOpen, ITrooperCreatorOpen>()
+                AddSingleton<ITrooperCreatorOpen,TrooperCreatorOpen>()
                 .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
                 .BuildServiceProvider());
         }
