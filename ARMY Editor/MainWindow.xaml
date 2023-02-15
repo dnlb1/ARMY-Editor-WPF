@@ -23,7 +23,7 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0" ItemsSource="{Binding Camp}" HorizontalContentAlignment="Stretch">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Camp}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelecterCamp}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="1" BorderBrush="Black">
@@ -59,7 +59,7 @@
             <ProgressBar></ProgressBar>
         </StackPanel>
 
-        <ListBox Grid.Column="2" ItemsSource="{Binding War}" HorizontalContentAlignment="Stretch">
+        <ListBox Grid.Column="2" ItemsSource="{Binding War}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding SelectedWar}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">

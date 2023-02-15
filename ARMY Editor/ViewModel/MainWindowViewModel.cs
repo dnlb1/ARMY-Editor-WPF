@@ -16,8 +16,30 @@ namespace ARMY_Editor.ViewModel
     {
         //Camp
         public ObservableCollection<Trooper> Camp { get; set; }
+        private Trooper selectedcamp;
+        public Trooper SelecterCamp
+        {
+            get { return selectedcamp; }
+            set 
+            {
+                SetProperty(ref selectedcamp , value); 
+            }
+        }
+
         //War
         public ObservableCollection<Trooper> War { get; set; }
+        private Trooper selectedwar;
+
+        public Trooper SelectedWar
+        {
+            get { return selectedwar; }
+            set 
+            { 
+                SetProperty(ref selectedwar , value); 
+            }
+        }
+
+
 
         public bool IsInDesigner
         {
