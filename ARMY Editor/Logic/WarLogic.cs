@@ -31,7 +31,7 @@ namespace ARMY_Editor.Logic
             {
                 if (War.Count > 0 )
                 {
-                    return War.Average(t => t.Speed);
+                    return Math.Round(War.Average(t => t.Speed),1);
                 }
                 else
                 {
@@ -46,7 +46,7 @@ namespace ARMY_Editor.Logic
             {
                 if (War.Count > 0)
                 {
-                    return War.Average(t => t.Power);
+                    return Math.Round(War.Average(t => t.Power), 1);
                 }
                 else
                 {
