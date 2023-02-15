@@ -14,9 +14,9 @@ namespace ARMY_Editor.ViewModel
     class MainWindowViewModel : ObservableRecipient
     {
         //Camp
-        ObservableCollection<Trooper> Camp { get; set; }
+        public ObservableCollection<Trooper> Camp { get; set; }
         //War
-        ObservableCollection<Trooper> War { get; set; }
+        public ObservableCollection<Trooper> War { get; set; }
 
         public bool IsInDesigner
         {
