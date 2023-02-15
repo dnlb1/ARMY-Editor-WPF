@@ -12,9 +12,11 @@ namespace ARMY_Editor.Logic
     {
         IList<Trooper> War { get; set; }
         IMessenger msg;
-        public WarLogic(IMessenger msg)
+        ITrooperCreatorOpen Tp;
+        public WarLogic(IMessenger msg, ITrooperCreatorOpen Tp)
         {
             this.msg = msg;
+            this.Tp = Tp;
         }
         public void SetupLogic(IList<Trooper> War)
         {
@@ -65,7 +67,7 @@ namespace ARMY_Editor.Logic
 
         public void CreateNewTrooper()
         {
-
+            Tp.Create();
         }
     }
 }
