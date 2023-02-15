@@ -76,5 +76,10 @@ namespace ARMY_Editor.Logic
                 msg.Send("TrooperAdded", "AvgToken");
             }
         }
+
+        public void RemoveTrooper(Trooper T)
+        {
+            Camp.Remove(T);
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace ARMY_Editor.ViewModel
             {
                 SetProperty(ref selectedcamp , value);
                 (AddToWar as RelayCommand).NotifyCanExecuteChanged();
+                (RemoveTrooper as RelayCommand).NotifyCanExecuteChanged();
             }
         }
 
@@ -127,7 +128,7 @@ namespace ARMY_Editor.ViewModel
 
             this.RemoveTrooper = new RelayCommand(() =>
             {
-
+                logic.RemoveTrooper(selectedcamp);
             },
             () =>
             {
