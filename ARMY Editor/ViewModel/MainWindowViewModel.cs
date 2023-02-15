@@ -29,7 +29,9 @@ namespace ARMY_Editor.ViewModel
         public MainWindowViewModel()
         {
             this.Camp = new ObservableCollection<Trooper>();
+            this.Camp.Add(new Trooper() { Side = Side.Evil, Speed = 2, Name = "Bela", Power = 4});
             this.War = new ObservableCollection<Trooper>();
+            this.War.Add(new Trooper() { Side = Side.Evil, Speed = 2, Name = "Bela", Power = 4 });
 
         }
     }
