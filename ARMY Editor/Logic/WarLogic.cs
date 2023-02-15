@@ -11,6 +11,7 @@ namespace ARMY_Editor.Logic
     class WarLogic : IWarLogic
     {
         IList<Trooper> War { get; set; }
+        IList<Trooper> Camp { get; set; }
         IMessenger msg;
         ITrooperCreatorOpen Tp;
         public WarLogic(IMessenger msg, ITrooperCreatorOpen Tp)
@@ -18,9 +19,10 @@ namespace ARMY_Editor.Logic
             this.msg = msg;
             this.Tp = Tp;
         }
-        public void SetupLogic(IList<Trooper> War)
+        public void SetupLogic(IList<Trooper> War, IList<Trooper> Camp)
         {
             this.War = War;
+            this.Camp = Camp;
         }
 
         public double AvgSpeed
@@ -70,7 +72,7 @@ namespace ARMY_Editor.Logic
             Trooper created = Tp.Create();
             if (created != null)
             {
-                War.Add(created);
+                Camp.Add(created);
                 msg.Send("TrooperAdded", "AvgToken");
             }
         }

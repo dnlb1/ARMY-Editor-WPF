@@ -11,6 +11,6 @@ namespace ARMY_Editor.Logic
         void AddToWar(Trooper T);
         void CreateNewTrooper();
         void RemoveFromWar(Trooper T);
-        void SetupLogic(IList<Trooper> War);
+        void SetupLogic(IList<Trooper> War, IList<Trooper> Camp);
     }
 }
