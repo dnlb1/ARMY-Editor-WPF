@@ -13,6 +13,7 @@
     </Window.DataContext>
     <Window.Resources>
         <Color:BackgroundStackPanel x:Key="ColorSide"></Color:BackgroundStackPanel>
+        <Color:ProgressBarColorChanger x:Key="ColorProgress"></Color:ProgressBarColorChanger>
     </Window.Resources>
     
     <Grid>
@@ -35,11 +36,11 @@
                                 </Grid.ColumnDefinitions>
                                 <StackPanel>
                                     <Label Content="Speed:"></Label>
-                                    <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Speed}"></ProgressBar>
+                                    <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Speed}" Foreground="{Binding Speed, Converter={StaticResource ColorProgress}}"></ProgressBar>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
                                     <Label Content="Power:"></Label>
-                                    <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Speed}"></ProgressBar>
+                                    <ProgressBar Height="10" Margin="10" Maximum="10" Value="{Binding Power}" Foreground="{Binding Power, Converter={StaticResource ColorProgress}}"></ProgressBar>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
