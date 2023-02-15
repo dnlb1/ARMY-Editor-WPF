@@ -63,7 +63,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
-                        <StackPanel>
+                        <StackPanel Background="{Binding Side, Converter={StaticResource ColorSide}}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"></ColumnDefinition>
