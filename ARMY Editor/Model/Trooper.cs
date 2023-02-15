@@ -13,7 +13,7 @@ namespace ARMY_Editor.Model
         Evil,
         Neutral
     }
-    class Trooper : ObservableObject
+    public class Trooper : ObservableObject
     {
         private string name;
 

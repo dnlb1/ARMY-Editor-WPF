@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ARMY_Editor.Model;
+using ARMY_Editor.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,12 @@ namespace ARMY_Editor
     /// </summary>
     public partial class TrooperCreator : Window
     {
-        public TrooperCreator()
+        public TrooperCreator(Trooper x)
         {
             InitializeComponent();
+            var vm = new TrooperCreatorViewModel();
+            vm.Setup(x);
+            this.DataContext = vm;
         }
     }
 }

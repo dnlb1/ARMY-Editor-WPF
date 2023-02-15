@@ -9,5 +9,14 @@ namespace ARMY_Editor.ViewModel
 {
     class TrooperCreatorViewModel
     {
+        public Trooper Actual { get; set; }
+        public void Setup(Trooper trooper)
+        {
+            this.Actual = trooper;
+        }
+        public TrooperCreatorViewModel()
+        {
+
+        }
     }
 }

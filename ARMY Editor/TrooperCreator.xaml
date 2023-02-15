@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="TrooperCreator" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Name" Background="LightBlue" VerticalContentAlignment="Center"></Label>
+        <TextBox Grid.Row="1" Text="{Binding Actual.Name, UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
+        <Label Grid.Row="2" Content="Speed" Background="LightBlue" VerticalContentAlignment="Center"></Label>
+        <TextBox Grid.Row="3" Text="{Binding Actual.Speed,  UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
+        <Label Grid.Row="4" Content="Power" Background="LightBlue" VerticalContentAlignment="Center"></Label>
+        <TextBox Grid.Row="5" Text="{Binding Actual.Power,  UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
+        <Label Grid.Row="6" Content="Side (Neutral, Evil, Good)" Background="LightBlue" VerticalContentAlignment="Center"></Label>
+        <TextBox  Grid.Row="7" Text="{Binding Actual.Side,  UpdateSourceTrigger=Explicit}" VerticalContentAlignment="Center"></TextBox>
+        <Button Grid.Row="8" Content="Create!" FontSize="20"></Button>
     </Grid>
 </Window>

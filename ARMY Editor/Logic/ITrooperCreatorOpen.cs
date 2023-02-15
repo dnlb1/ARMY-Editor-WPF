@@ -1,7 +1,9 @@
-﻿namespace ARMY_Editor.Logic
+﻿using ARMY_Editor.Model;
+
+namespace ARMY_Editor.Logic
 {
     interface ITrooperCreatorOpen
     {
-        void Create();
+        Trooper Create();
     }
 }
