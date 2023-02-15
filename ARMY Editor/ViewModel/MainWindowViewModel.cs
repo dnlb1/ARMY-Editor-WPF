@@ -80,6 +80,7 @@ namespace ARMY_Editor.ViewModel
         public ICommand AddToWar { get; set; }
         public ICommand CallBackFromWar { get; set; }
         public ICommand CreateNewTrooper { get; set; }
+        public ICommand RemoveTrooper { get; set; }
 
         public MainWindowViewModel(): this(IsInDesigner ? null : Ioc.Default.GetService<IWarLogic>())
         {
@@ -122,6 +123,15 @@ namespace ARMY_Editor.ViewModel
             () =>
             {
                 return true;
+            });
+
+            this.RemoveTrooper = new RelayCommand(() =>
+            {
+
+            },
+            () =>
+            {
+                return SelecterCamp != null;
             });
 
             Messenger.Register<MainWindowViewModel, string, string>(this, "AvgToken", (recipient, msg) =>
