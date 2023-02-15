@@ -26,5 +26,11 @@ namespace ARMY_Editor.ViewModel
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
+        public MainWindowViewModel()
+        {
+            this.Camp = new ObservableCollection<Trooper>();
+            this.War = new ObservableCollection<Trooper>();
+
+        }
     }
 }
